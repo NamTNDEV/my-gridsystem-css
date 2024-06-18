@@ -1,18 +1,15 @@
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
-.container {
+.container, .container-fluid {
     --col-size: 12;
-    --gutter-y: 10px;
+    --gutter-x: 6px;
+    --gutter-y: 6px;
 
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.container-fluid {
-    width: 100%;
+    padding-left: calc(var(--gutter-x)/2);
+    padding-right: calc(var(--gutter-x)/2);
 }
 
 .row {
@@ -26,63 +23,10 @@
 
 .col {
     flex: 1 0 auto;
-}
-
-.row>[class*='col-'] {
-    flex: 0 0 auto;
-    width: calc(100% / var(--col-size) * var(--col-number));
     padding-top: calc(var(--gutter-y)/2);
     padding-bottom: calc(var(--gutter-y)/2);
     padding-left: calc(var(--gutter-x)/2);
     padding-right: calc(var(--gutter-x)/2);
-}
-
-.col-1 {
-    --col-number: 1;
-}
-
-.col-2 {
-    --col-number: 2;
-}
-
-.col-3 {
-    --col-number: 3;
-}
-
-.col-4 {
-    --col-number: 4;
-}
-
-.col-5 {
-    --col-number: 5;
-}
-
-.col-6 {
-    --col-number: 6;
-}
-
-.col-7 {
-    --col-number: 7;
-}
-
-.col-8 {
-    --col-number: 8;
-}
-
-.col-9 {
-    --col-number: 9;
-}
-
-.col-10 {
-    --col-number: 10;
-}
-
-.col-11 {
-    --col-number: 11;
-}
-
-.col-12 {
-    --col-number: 12;
 }
 
 .row[class*='row-cols-']>* {
@@ -140,6 +84,63 @@
 
 .row-cols-12>* {
     --row-cols-number: 12;
+}
+
+.row>[class*='col-'] {
+    flex: 0 0 auto;
+    width: calc(100% / var(--col-size) * var(--col-number));
+    padding-top: calc(var(--gutter-y)/2);
+    padding-bottom: calc(var(--gutter-y)/2);
+    padding-left: calc(var(--gutter-x)/2);
+    padding-right: calc(var(--gutter-x)/2);
+}
+
+.col-1 {
+    --col-number: 1;
+}
+
+.col-2 {
+    --col-number: 2;
+}
+
+.col-3 {
+    --col-number: 3;
+}
+
+.col-4 {
+    --col-number: 4;
+}
+
+.col-5 {
+    --col-number: 5;
+}
+
+.col-6 {
+    --col-number: 6;
+}
+
+.col-7 {
+    --col-number: 7;
+}
+
+.col-8 {
+    --col-number: 8;
+}
+
+.col-9 {
+    --col-number: 9;
+}
+
+.col-10 {
+    --col-number: 10;
+}
+
+.col-11 {
+    --col-number: 11;
+}
+
+.col-12 {
+    --col-number: 12;
 }
 
 .g-x-0 {
@@ -205,9 +206,18 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .container {
+        --gutter-x: 10px;
         --gutter-y: 10px;
 
         max-width: 540px;
+    }
+
+    .g-x-sm-0 {
+        --gutter-x: 0;
+    }
+
+    .g-y-sm-0 {
+        --gutter-y: 0;
     }
 
     .col-sm-1 {
@@ -364,6 +374,14 @@
         max-width: 720px;
     }
 
+    .g-x-md-0 {
+        --gutter-x: 0;
+    }
+
+    .g-y-md-0 {
+        --gutter-y: 0;
+    }
+
     .col-md-1 {
         --col-number: 1;
     }
@@ -518,6 +536,14 @@
         max-width: 960px;
     }
 
+    .g-x-lg-0 {
+        --gutter-x: 0;
+    }
+
+    .g-y-lg-0 {
+        --gutter-y: 0;
+    }
+
     .col-lg-1 {
         --col-number: 1;
     }
@@ -669,6 +695,14 @@
         max-width: 1140px;
     }
 
+    .g-x-xl-0 {
+        --gutter-x: 0;
+    }
+
+    .g-y-xl-0 {
+        --gutter-y: 0;
+    }
+
     .col-xl-1 {
         --col-number: 1;
     }
@@ -818,6 +852,14 @@
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
+    }
+
+    .g-x-xxl-0 {
+        --gutter-x: 0;
+    }
+
+    .g-y-xxl-0 {
+        --gutter-y: 0;
     }
 
     .col-xxl-1 {
