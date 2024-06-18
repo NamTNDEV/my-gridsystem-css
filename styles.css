@@ -1,3 +1,9 @@
 *, ::before, ::after {
     box-sizing: border-box;
 }
+
+.card-item {
+    width: 33.33%;
+    background-color: aqua;
+    color: #000;
+}
