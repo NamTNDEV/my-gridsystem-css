@@ -17,6 +17,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: calc(-1 * var(--gutter) / 2);
+    margin-right: calc(-1 * var(--gutter) / 2);
 }
 
 .col {
@@ -26,6 +28,8 @@
 .row>[class*='col-'] {
     flex: 0 0 auto;
     width: calc(100% / var(--col-size) * var(--col-number));
+    padding-left: calc(var(--gutter)/2);
+    padding-right: calc(var(--gutter)/2);
 }
 
 .col-1 {
@@ -79,6 +83,8 @@
 .row[class*='row-cols-']>* {
     flex: 0 0 auto;
     width: calc(100% / var(--row-cols-number));
+    padding-left: calc(var(--gutter)/2);
+    padding-right: calc(var(--gutter)/2);
 }
 
 .row-cols-1>* {
@@ -127,6 +133,10 @@
 
 .row-cols-12>* {
     --row-cols-number: 12;
+}
+
+.g-0 {
+    --gutter: 0;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -235,6 +245,8 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .container {
+        --gutter: 20px;
+
         max-width: 720px;
     }
 
@@ -338,6 +350,8 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .container {
+        --gutter: 30px;
+
         max-width: 960px;
     }
 
