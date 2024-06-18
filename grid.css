@@ -2,6 +2,7 @@
 /* No media query for `xs` since this is the default in Bootstrap */
 .container {
     --col-size: 12;
+    --gutter-y: 10px;
 
     width: 100%;
     margin-left: auto;
@@ -17,8 +18,10 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(-1 * var(--gutter) / 2);
-    margin-right: calc(-1 * var(--gutter) / 2);
+    margin-top: calc(-1 * var(--gutter-y) / 2);
+    margin-bottom: calc(-1 * var(--gutter-y) / 2);
+    margin-left: calc(-1 * var(--gutter-x) / 2);
+    margin-right: calc(-1 * var(--gutter-x) / 2);
 }
 
 .col {
@@ -28,8 +31,10 @@
 .row>[class*='col-'] {
     flex: 0 0 auto;
     width: calc(100% / var(--col-size) * var(--col-number));
-    padding-left: calc(var(--gutter)/2);
-    padding-right: calc(var(--gutter)/2);
+    padding-top: calc(var(--gutter-y)/2);
+    padding-bottom: calc(var(--gutter-y)/2);
+    padding-left: calc(var(--gutter-x)/2);
+    padding-right: calc(var(--gutter-x)/2);
 }
 
 .col-1 {
@@ -83,8 +88,10 @@
 .row[class*='row-cols-']>* {
     flex: 0 0 auto;
     width: calc(100% / var(--row-cols-number));
-    padding-left: calc(var(--gutter)/2);
-    padding-right: calc(var(--gutter)/2);
+    padding-top: calc(var(--gutter-y)/2);
+    padding-bottom: calc(var(--gutter-y)/2);
+    padding-left: calc(var(--gutter-x)/2);
+    padding-right: calc(var(--gutter-x)/2);
 }
 
 .row-cols-1>* {
@@ -135,13 +142,19 @@
     --row-cols-number: 12;
 }
 
-.g-0 {
-    --gutter: 0;
+.g-x-0 {
+    --gutter-x: 0;
+}
+
+.g-y-0 {
+    --gutter-y: 0;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .container {
+        --gutter-y: 10px;
+
         max-width: 540px;
     }
 
@@ -245,7 +258,8 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .container {
-        --gutter: 20px;
+        --gutter-x: 20px;
+        --gutter-y: 20px;
 
         max-width: 720px;
     }
@@ -350,7 +364,8 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .container {
-        --gutter: 30px;
+        --gutter-x: 30px;
+        --gutter-y: 30px;
 
         max-width: 960px;
     }
